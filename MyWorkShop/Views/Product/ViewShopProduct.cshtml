@@ -1,0 +1,34 @@
+﻿<div class="container">
+    <form action="/Product/ViewShopProduct" method="get" al>
+
+        <img src="@ViewBag.View.FilePatch" alt="Sample Image" />
+        <br />
+
+        <p name="ProductName" ><b>Название товара: </b>@ViewBag.View.ProductName</p>
+      
+        <p name="ManufacturerProduct"><b>Производитель товара: </b>@ViewBag.View.ManufacturerProduct</p>
+
+        <p name="PriceProduct"><b>Цена товара: </b>@ViewBag.View.PriceProduct</p>
+       
+        <p name="PriceProduct"> <b>Вид товара: </b>@ViewBag.View.TypeProdycts</p>
+
+         <p name="PriceProduct"> <b>Состояние товара: </b>
+            @if (@ViewBag.View.IsAvaliable == true) {<strong>В наличии</strong> }  else {<strong>Нет в наличии</strong>}
+         </p>
+
+        <p name="DescriptionProduct"><b>Описание товара: </b>@ViewBag.View.DescriptionProduct</p>
+
+    </form>
+</div>
+
+<style>
+    img {
+        width: 300px;
+        height: 300px;
+        float: left; /* Выравнивание по левому краю */
+        margin: 7px 7px 7px 0;
+    }
+    strong {
+        color: red;
+    }
+</style>

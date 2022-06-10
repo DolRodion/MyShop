@@ -1,0 +1,1 @@
+Ошибка загружаемого файла   at MyWorkShop.Services.ProductService.AddNewShopProductAsync(ShopProductParam param) in C:\Users\User\source\repos\MyWorkShop\MyWorkShop\Services\ProductService.cs:line 161

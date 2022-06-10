@@ -1,0 +1,54 @@
+﻿<div class="container">
+    <h2>Форум</h2>
+    <br />
+
+    <h4>Добавить новое сообщение</h4>
+    <form action="/Forum/AddNewMessage" method="post">
+
+        <b>Фио</b><br />
+        <input type="text" name="Fio" />
+        <br />
+        <br />
+
+        <b>Сообщение</b><br />
+        <textarea rows="5" cols="70" name="Text"></textarea>
+        <br />
+        <br />
+
+        <input type="submit" class="btn btn-success" />
+    </form>
+
+    <br />
+    <hr />
+    <h2>Сообщения</h2>
+    @{
+        foreach (var item in @ViewBag.AllForumMesseges)
+        {
+        <div class="mess">
+             <div align="justify">
+                  <p><img src="~/img/avatar.jpg" alt="Sample Image" />  @item.Fio</p>
+             </div>
+            <p><b>Дата: </b>@item.DateText</p>
+            <p><b>Текст сообщения: </b>@item.Text</p>
+        </div>
+            <hr />
+
+        }
+    }
+</div>
+
+    @{
+        <style scoped>
+            img {
+                width:50px;
+                height:50px;
+            }
+
+            .mess {
+                padding: 10px 5px;
+                border: 1px solid silver;
+                background-color: #e9f6d2;
+                border-radius: 5px;
+            }
+        </style>
+    }

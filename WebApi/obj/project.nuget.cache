@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "510gYqwub7SizCCFRb8QOE5dpp7SHIlQwvgzSIYnCWFuuHLBSTLfhVFp0/IwoifYge56blco0B2H+bSQA+t3tA==",
+  "success": true,
+  "projectFilePath": "D:\\repos\\MyWorkShop\\WebApi\\WebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dolro\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512",
+    "C:\\Users\\dolro\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\dolro\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\dolro\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

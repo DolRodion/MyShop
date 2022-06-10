@@ -1,0 +1,35 @@
+﻿<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Дата операции</th>
+            <th scope="col">Вид события</th>
+            <th scope="col">ФИО</th>
+            <th scope="col">Сообщение</th>
+            <th scope="col">Файл</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in ViewBag.AllTransactionLog)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.OperationDate</td>
+                    <td>@item.OperationEnum</td>
+                    <td>@item.Fio</td>
+                    <td>@item.Data</td>
+                    <td><a href="#">Файл</a></td>
+                </tr>
+
+            }
+        }
+    </tbody>
+</table>
+
+<style>
+    th, td {
+        text-align: center;
+    }
+</style>

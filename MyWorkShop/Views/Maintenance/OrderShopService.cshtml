@@ -1,0 +1,55 @@
+﻿<h2>Форма обратной связи</h2>
+
+<form action="/Maintenance/OrderShopService" method="post">
+
+    <p><b>Услуга: </b>@ViewBag.Data.ServiceName</p>
+
+    <input type="hidden" name="Id" value="@ViewBag.Data.Id" />
+
+    <b>ФИО</b><br />
+    <input type="text" name="Fio" />
+    <br />
+    <br />
+
+    <b>Email</b><br />
+    <input type="text" name="Email" />
+    <br />
+    <br />
+
+    <b>Телефон</b><br />
+    <input type="text" name="Telephone" />
+    <br />
+    <br />
+
+    <div class="gradientCoin">
+        <b>Цена: @ViewBag.Data.ServicePrice р.</b>
+    </div>
+
+    <br />
+
+    <b>Комментарий</b><br />
+    <textarea rows="7" cols="80" type="text" name="Description"></textarea>
+    <br />
+    <br />
+
+    <input type="submit" class="btn btn-success" />
+
+</form>
+
+@{
+    <style scoped>
+
+        .gradientCoin {
+            padding: 35px 15px;
+            width: 300px;
+            background-color: #DBDADA;
+            border-radius: 5px;
+        }
+
+        .gradientCoin b {
+            color: darkgreen;
+            font-size: 20px;
+        }
+
+    </style>
+}

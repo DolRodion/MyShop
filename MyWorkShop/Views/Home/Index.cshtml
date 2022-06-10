@@ -1,0 +1,169 @@
+﻿
+<img class="mainImage" src="~/img/fon.jpg" alt="Sample Image" />
+<div class="imageConteyner">
+    <h1>Компьютерный магазин</h1>
+    <h2>MyWorkShop</h2>
+</div>
+
+<div class="container">
+    <center class="dopTitle">
+        <h2> Приветствуем вас в нашем магазине</h2>
+        <p> Все, что нас не убивает, делает сильнее</p>
+    </center>
+    <div class="row blockText">
+        <div class="col-sm">
+            <img src="~/img/4.png" alt="Sample Image" />
+            <h4> Быстрая покупка</h4>
+            <p> Все, что нас не убивает, делает сильнее. Все, что нас не убивает, делает сильнее</p>
+            <br>
+            <a href="#">Подробнее</a>
+        </div>
+        <div class="col-sm">
+            <img src="~/img/4.png" alt="Sample Image" />
+            <h4>Доставка по России</h4>
+            <p> Все, что нас не убивает, делает сильнее. Все, что нас не убивает, делает сильнее</p>
+            <br>
+            <a href="#">Подробнее</a>
+        </div>
+        <div class="col-sm">
+            <img src="~/img/4.png" alt="Sample Image" />
+            <h4> Продажа шаблонов</h4>
+            <p> Все, что нас не убивает, делает сильнее. Все, что нас не убивает, делает сильнее</p>
+            <br>
+            <a href="#">Подробнее</a>
+        </div>
+        <div class="col-sm">
+            <img src="~/img/4.png" alt="Sample Image" />
+            <h4>Оплачивайте здесь</h4>
+            <p> Все, что нас не убивает, делает сильнее. Все, что нас не убивает, делает сильнее</p>
+            <br>
+            <a href="#">Подробнее</a>
+        </div>
+    </div>
+    <center class="dopTitle">
+        <br>
+        <h2> Что мы можем вам предложить?</h2>
+         <p> Все, что нас не убивает, делает сильнее</p>
+    </center>
+
+    <div class="row">
+        @{
+            foreach (var item in ViewBag.Main)
+            {
+                @Html.Raw("<div class=\"col-sm-3 productContainer\">")
+                @Html.Raw("<div>")
+                <h3>  @item.ProductName </h3>
+                <img src="@item.FilePatch" alt="Sample Image" />
+                <p style="color: silver;"><b>@item.ManufacturerProduct</b>  </p>
+                if (@item.Discount != 0)
+                {
+                    <p> <b> Цена: </b> @item.PriceProduct р. <span class="Disc">Скидка : @item.Discount % </span></p>
+                }
+                else
+                {
+                    <p> <b> Цена: </b> @item.PriceProduct р. </p>
+                }
+
+                <p> <b> Вид товара: </b> @item.TypeProdycts </p>
+                if (@item.IsAvaliable)
+                {
+                    <p>Состояние: <b style="color: darkgreen;">В наличии</b></p>
+                }
+                else
+                {
+                    <p>Состояние: <b style="color: red;">Не в наличии</b></p>
+                }
+                <br />
+                <form action="/Product/ViewShopProduct/@item.Id" method="get">
+                    <input type="submit" value="Подробнее" class="btn btn-warning" />
+                </form>
+                @Html.Raw("</div>")
+                @Html.Raw("</div>")
+            }
+
+        }
+    </div>
+
+</div>
+
+
+<style>
+    .mainImage {
+        width: 100%;
+        height: 450px;
+        position: absolute;
+    }
+    .imageConteyner {
+        width: 933px;
+        position:relative;
+        margin: 0 auto  0 auto;
+        color:white;
+        height: 450px;
+        padding-top:150px;
+    }
+    .dopTitle p {
+        color: #858484;
+        font-size:14px;
+    }
+    .dopTitle {
+        margin:20px 0 20px 0; 
+    }
+    .blockText .col-sm:nth-child(n+1) {
+        margin-left:20px;
+    }
+
+    .blockText .col-sm {
+        height: 300px;
+        background-color: #38486f;
+        color: white;
+        text-align: center;
+    }
+    .blockText .col-sm img {
+        height:50px;
+        margin: 30px 0 30px 0;
+    }
+    .blockText .col-sm:hover {
+            background-color: black;
+            transition-duration: 1s;
+    }
+    .blockText .col-sm a {
+        margin-left:150px;
+        color:white;
+    }
+    .row .productContainer {
+        position: relative;
+        margin-bottom:20px;
+        padding: 0 10px;
+    }
+        .row .productContainer div {
+            border: 1px solid silver;
+            padding: 5px 10px;
+        }
+
+        .row .productContainer div p {
+            margin:0;
+            padding:0;
+            line-height:1.5;
+        }
+
+            .row .productContainer img {
+                height: 220px;
+                width: 100%;
+            }
+    .row .productContainer h3 {
+        text-align:center;
+        }
+    .Disc {
+        background-color: yellow;
+        color: red;
+        padding: 3px;
+        font-weight: bold;
+    }
+    input[type=button] {
+        width: 100%;
+    }
+    form {
+        text-align: center;
+    }
+
+</style>

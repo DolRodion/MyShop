@@ -1,0 +1,54 @@
+﻿<div class="container">
+    <h2>Добавление товара</h2>
+
+    <form action="/Product/AddShopProducts" method="post" enctype="multipart/form-data">
+
+        <b>Название товара</b><br />
+        <input type="text" name="ProductName" />
+        <br />
+        <br />
+
+        <b>Производитель товара</b><br />
+        <input type="text" name="ManufacturerProduct" />
+        <br />
+        <br />
+
+        <b>Цена товара</b><br />
+        <input type="text" name="PriceProduct" />
+        <br />
+        <br />
+
+        <b>Вид товара</b><br />
+        <select name="TypeProdycts">
+            <option>Клава</option>
+            <option>Ноуты</option>
+            <option>Колонка</option>
+            <option>Мышки</option>
+            <option>Мониторы</option>
+        </select>
+        <br />
+        <br />
+
+        <b>Состояние товара</b><br />
+        <select name="IsAvaliable">
+            <option>В наличии</option>
+            <option>Отсутствует</option>
+        </select>
+
+        <br />
+        <br />
+
+        <b>Описание товара</b><br />
+        <textarea rows="10" cols="45" name="DescriptionProduct"></textarea>
+        <br />
+        <br />
+
+        <b>Загрузка картинки</b><br />
+        <input type="file" name="FormFile" />
+        <br />
+        <br />
+
+        <input type="submit" class="btn btn-success" />
+
+    </form>
+</div>

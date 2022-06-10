@@ -1,0 +1,114 @@
+﻿<div class="container">
+<h2>Редактирование товара</h2>
+
+<form action="/Product/EditShopProduct" method="post" enctype="multipart/form-data">
+
+    <input type="hidden" name="Id" value="@ViewBag.Dom.Id" />
+
+    <b>Название товара</b><br />
+    <input type="text" name="ProductName" value="@ViewBag.Dom.ProductName" />
+    <br />
+    <br />
+
+    <b>Производитель товара</b><br />
+    <input type="text" name="ManufacturerProduct" value="@ViewBag.Dom.ManufacturerProduct" />
+    <br />
+    <br />
+
+    <b>Цена товара</b><br />
+    <input type="text" name="PriceProduct" value="@ViewBag.Dom.PriceProduct" />
+    <br />
+    <br />
+
+    <b>Вид товара</b><br />
+    <select name="TypeProdycts">
+        @{
+            if (@ViewBag.Dom.TypeProdycts == "Клава")
+            {
+                <option selected>Клава</option>
+            }
+            else
+            {
+                <option>Клава</option>
+            }
+
+            if (@ViewBag.Dom.TypeProdycts == "Ноуты")
+            {
+                <option selected>Ноуты</option>
+            }
+            else
+            {
+                <option>Ноуты</option>
+            }
+
+            if (@ViewBag.Dom.TypeProdycts == "Колонка")
+            {
+                <option selected>Колонка</option>
+            }
+            else
+            {
+                <option>Колонка</option>
+            }
+
+            if (@ViewBag.Dom.TypeProdycts == "Мышки")
+            {
+                <option selected>Мышки</option>
+            }
+            else
+            {
+                <option>Мышки</option>
+            }
+
+            if (@ViewBag.Dom.TypeProdycts == "Мониторы")
+            {
+                <option selected>Мониторы</option>
+            }
+            else
+            {
+                <option>Мониторы</option>
+            }
+
+        }
+    </select>
+    <br />
+    <br />
+
+    <b>Состояние товара</b><br />
+    <select name="IsAvaliable">
+        @{
+            if (@ViewBag.Dom.IsAvaliable)
+            {
+                <option selected>В наличии</option>
+            }
+            else
+            {
+                <option>В наличии</option>
+            }
+
+            if (@ViewBag.Dom.IsAvaliable == false)
+            {
+                <option selected>Отсутствует</option>
+            }
+            else
+            {
+                <option>Отсутствует</option>
+            }
+        }
+    </select>
+    <br />
+    <br />
+
+    <b>Описание товара</b><br />
+    <textarea rows="10" cols="45" name="DescriptionProduct">@ViewBag.Dom.DescriptionProduct</textarea>
+    <br />
+    <br />
+
+    <b>Загрузка картинки</b><br />
+    <input type="file" name="FormFile" />
+    <br />
+    <br />
+
+    <input type="submit" class="btn btn-success" />
+
+</form>
+</div>

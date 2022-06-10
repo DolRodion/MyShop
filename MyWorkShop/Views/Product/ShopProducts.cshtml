@@ -1,0 +1,136 @@
+﻿<div class="container">
+    <h2> Товары </h2>
+    <br />
+    <br />
+    <hr />
+    <form action="/Product/ShopProducts" method="post">
+        <h3> Фильтры </h3>
+        <div class="row">
+            <div class="col-sm">
+                <select class="standart" name="Manufacturer">
+                    <option>Не выбрано</option>
+                    @{
+                        foreach (var item in ViewBag.Manufacturer)
+                        {
+                            <option>@item </option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="col-sm">
+                <span><input placeholder="От" class="numberSize" type="number" name="PriceFrom"/> - <input placeholder="До" class="numberSize" type="number" name="PriceBefore" /></span>
+            </div>
+            <div class="col-sm">
+                <span class="checkVal"><input type="checkbox" name="Avaliable" value="true"> - В наличии</span>
+                <input style="width: 50%;" type="submit" class="btn btn-success standart" value="Выбрать" />
+            </div>
+
+        </div>
+    </form>
+
+            <hr />
+
+            <div class="row">
+                @{
+                    foreach (var item in ViewBag.Petyh)
+                    {
+                        @Html.Raw("<div class=\"col-sm-3 productContainer\">")
+                        @Html.Raw("<div>")
+                        <h3>  @item.ProductName </h3>
+                        if (@item.FilePatch == string.Empty)
+                        {
+                            <img src="/img/404.jpg" alt="Sample Image" />
+                        }
+                        else
+                        {
+                            <img src="@item.FilePatch" alt="Sample Image" />
+                        }
+
+
+                        <p style="color: silver;"><b>@item.ManufacturerProduct</b>  </p>
+                        if (@item.Discount != 0)
+                        {
+                            <p> <b> Цена: </b> @item.PriceProduct р. <span class="Disc">Скидка : @item.Discount % </span></p>
+                        }
+                        else
+                        {
+                            <p> <b> Цена: </b> @item.PriceProduct р. </p>
+                        }
+
+                        <p> <b> Вид товара: </b> @item.TypeProdycts </p>
+                        if (@item.IsAvaliable)
+                        {
+                            <p>Состояние: <b style="color: darkgreen;">В наличии</b></p>
+                        }
+                        else
+                        {
+                            <p>Состояние: <b style="color: red;">Не в наличии</b></p>
+                        }
+                        <br />
+                        <form action="/Product/ViewShopProduct/@item.Id" method="get">
+                            <input type="submit" value="Подробнее" class="btn btn-warning" />
+                        </form>
+                        @Html.Raw("</div>")
+                        @Html.Raw("</div>")
+                    }
+
+                }
+            </div>
+</div>
+    @{
+        <style scoped>
+
+            .row .productContainer {
+                position: relative;
+                margin-bottom: 20px;
+                padding: 0 10px;
+            }
+
+                .row .productContainer div {
+                    border: 1px solid silver;
+                    padding: 5px 10px;
+                }
+
+                    .row .productContainer div p {
+                        margin: 0;
+                        padding: 0;
+                        line-height: 1.5;
+                    }
+
+                .row .productContainer img {
+                    height: 220px;
+                    width: 100%;
+                }
+
+                .row .productContainer h3 {
+                    text-align: center;
+                }
+
+            .Disc {
+                background-color: yellow;
+                color: red;
+                padding: 3px;
+                font-weight: bold;
+            }
+
+            .numberSize {
+                width: 47%;
+                height: 38px;
+                text-indent: 10px;
+            }
+
+            .standart {
+                width:100%;
+                height: 38px;
+                font-size: 16px;
+            }
+
+            .checkVal{
+                font-size: 16px;
+                margin-right:10px;
+            }
+            form {
+                text-align: center;
+            }
+        </style>
+    }

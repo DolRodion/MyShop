@@ -1,0 +1,47 @@
+﻿<div class="container">
+<h2> Услуги </h2>
+
+<a class="btn btn-outline-success" href="/Maintenance/AddShopService" role="button">Добавить услугу</a>
+
+
+<br />
+<br />
+<hr />
+
+@{
+    foreach (var item in ViewBag.NePetyh)
+    {
+        <p> <b> @item.ServicesName</b> </p>
+
+        if (@item.Discount != 0)
+        {
+            <p> <b> Цена: </b> @item.PriceService р. - <span class="Disc">Скидка : @item.Discount % </span></p>
+        }
+        else
+        {
+            <p> <b> Цена: </b> @item.PriceService р. </p>
+        }
+
+        <p> <b> Описание услуги: </b> @item.DescriptionService </p>
+        <a class="btn btn-outline-success" href="/Maintenance/OrderShopService/@item.Id" role="button">Заказать услугу</a>
+        <a class="btn btn-warning" href="/Maintenance/EditShopService/@item.Id" role="button">Редактировать услугу</a>
+        <hr />
+    }
+}
+</div>
+
+@{
+    <style scoped>
+
+        p {
+            line-height: 0.5;
+        }
+
+        .Disc {
+            background-color: yellow;
+            color: red;
+            padding: 3px;
+            font-weight: bold;
+        }
+    </style>
+}

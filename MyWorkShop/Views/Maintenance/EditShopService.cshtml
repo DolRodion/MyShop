@@ -1,0 +1,24 @@
+﻿<h2>Добавление услуги</h2>
+
+<form action="/Maintenance/AddShopService" method="post">
+
+    <input type="hidden" name="Id" value="@ViewBag.Data.Id" />
+
+    <b>Название услуги</b><br />
+    <input type="text" name="ServicesName" value="@ViewBag.Data.ServiceName" />
+    <br />
+    <br />
+
+    <b>Цена услуги</b><br />
+    <input type="text" name="PriceService" value="@ViewBag.Data.ServicePrice" />
+    <br />
+    <br />
+
+    <b>Описание услуги</b><br />
+    <textarea name="DescriptionService">@ViewBag.Data.DescriptionService</textarea>
+    <br />
+    <br />
+
+    <input type="submit" class="btn btn-success" />
+
+</form>
